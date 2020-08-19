@@ -15,6 +15,7 @@ module.exports = {
       return chunkData.chunk.name === 'index'?'lib/[name].js':'lib/components/[name]/index.js'
     },
     path: path.resolve(__dirname,'..','docs'),
+    libraryTarget: "umd",
   },
   devtool: 'source-map',
   plugins: [

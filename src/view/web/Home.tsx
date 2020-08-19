@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Upload from '@/components/lib/Upload';
 import home from './home.md';
 import MarkDown from '../../localCom/MarkDown';
+import {Upload} from '@/components/index'
 
 export default () => {
   const [url, setUrl] = useState('');

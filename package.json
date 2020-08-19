@@ -1,12 +1,11 @@
 {
-  "name": "xr-react",
-  "version": "1.0.0",
+  "name": "lw-xr-react",
+  "version": "1.0.1",
   "description": "react ts",
-  "main": "./build/lib/index.js",
+  "main": "./docs/lib/index.js",
   "files": [
-    "/build/lib/**/*"
+    "/docs/lib/**/*"
   ],
-  "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server --compress",
     "build": "cross-env NODE_ENV=pro webpack",
@@ -31,6 +30,7 @@
     "html-webpack-plugin": "^4.3.0",
     "less": "^2.7.3",
     "less-loader": "^6.2.0",
+    "lw-xr-react": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
