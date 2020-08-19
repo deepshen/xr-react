@@ -14,7 +14,7 @@ module.exports = {
       }
       return chunkData.chunk.name === 'index'?'lib/[name].js':'lib/components/[name]/index.js'
     },
-    path: path.resolve(__dirname,'..','build'),
+    path: path.resolve(__dirname,'..','docs'),
   },
   devtool: 'source-map',
   plugins: [
