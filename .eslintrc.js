@@ -3,11 +3,14 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
-    sourceType: 'module'
   },
   plugins: [
     '@typescript-eslint',
   ],
+  env: {
+    es6: true,
+    node: true,
+  },
   extends: [
     'airbnb-typescript',
     'eslint:recommended',
@@ -23,6 +26,8 @@ module.exports = {
     }
   },
   rules: {
+    "import/no-extraneous-dependencies":0,
+    "@typescript-eslint/no-var-requires":0,
     "react/prop-types":0,
     "no-loop-func":0,
     "react/require-default-props":0,

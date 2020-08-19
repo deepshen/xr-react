@@ -19,15 +19,15 @@ module.exports = merge(mergeConfig,
   {
     module: {
       rules: [
-        {
-          test: /\.(jsx|js|ts|tsx)$/,
-          include: [
-            path.resolve(__dirname, './src'),
-          ],
-          exclude: [/node_modules/],
-          use: ['eslint-loader'],
-          enforce: 'pre',
-        },
+        // {
+        //   test: /\.(jsx|js|ts|tsx)$/,
+        //   include: [
+        //     path.resolve(__dirname, './src'),
+        //   ],
+        //   exclude: [/node_modules/],
+        //   use: ['eslint-loader'],
+        //   enforce: 'pre',
+        // },
         {
           test: /\.(ts|tsx|js|jsx)$/,
           loader: 'ts-loader',

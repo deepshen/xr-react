@@ -1,0 +1,8 @@
+node_modules
+docs/
+config/
+entry.js
+setupJest.js
+webpack.config.js
+test/
+jest.config.js
