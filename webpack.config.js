@@ -1,17 +1,18 @@
-const path = require('path')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const tsImportPluginFactory = require('ts-import-plugin')
+/*eslint-disable*/
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const tsImportPluginFactory = require('ts-import-plugin');
 
-const {merge} = require('webpack-merge')
+const { merge } = require('webpack-merge');
 
-const prod = require('./config/webpack.build.config')
-const dev = require('./config/webpack.dev.config')
+const prod = require('./config/webpack.build.config');
+const dev = require('./config/webpack.dev.config');
 
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV;
 
-let mergeConfig = dev
-if(env === 'pro'){
-  mergeConfig = prod
+let mergeConfig = dev;
+if (env === 'pro') {
+  mergeConfig = prod;
 }
 
 module.exports = merge(mergeConfig,
@@ -19,18 +20,27 @@ module.exports = merge(mergeConfig,
     module: {
       rules: [
         {
+          test: /\.(jsx|js|ts|tsx)$/,
+          include: [
+            path.resolve(__dirname, './src'),
+          ],
+          exclude: [/node_modules/],
+          use: ['eslint-loader'],
+          enforce: 'pre',
+        },
+        {
           test: /\.(ts|tsx|js|jsx)$/,
           loader: 'ts-loader',
           options: {
             transpileOnly: true,
             getCustomTransformers: () => ({
-              before:[tsImportPluginFactory({
+              before: [tsImportPluginFactory({
                 libraryName: 'antd',
                 libraryDirectory: 'lib',
                 style: 'css',
               })],
             }),
-            compilerOptions:{
+            compilerOptions: {
               module: 'es2015',
             },
           },
@@ -48,7 +58,7 @@ module.exports = merge(mergeConfig,
           use: [
             'style-loader',
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: {
                 importLoaders: 1,
               },
@@ -63,16 +73,14 @@ module.exports = merge(mergeConfig,
       ],
     },
     resolve: {
-      extensions: ['.js','.jsx','.ts','.tsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       alias: {
-        '@/components': path.resolve(__dirname,'./src/components'),
-        '@/utils': path.resolve(__dirname,'./src/utils'),
-        '@/localCom': path.resolve(__dirname,'./src/localCom'),
+        '@/components': path.resolve(__dirname, './src/components'),
+        '@/utils': path.resolve(__dirname, './src/utils'),
+        '@/localCom': path.resolve(__dirname, './src/localCom'),
       },
     },
     plugins: [
       new CleanWebpackPlugin(),
     ],
-  }
-)
-
+  });

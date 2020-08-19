@@ -5,7 +5,6 @@ declare module 'react-router-dom'
 declare module 'react-markdown'
 declare module 'xr-cos-web'
 
-
 declare module '*.png'
 declare module '*.jpg'
 declare module '*.jpeg'
