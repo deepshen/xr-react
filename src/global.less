@@ -1,0 +1,41 @@
+#root{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .ant-layout-header{
+    background-color: cornflowerblue;
+  }
+  .ant-layout-sider{
+   background-color: #fff;
+  }
+}
+pre{
+  background-color: rgba(1,1,1,.2);
+  padding: 12px;
+}
+
+table {
+  width: 100%; /*表格宽度*/
+  border: 1px solid #dedede; /*表格外边框设置*/
+  border-collapse: collapse; /*使用单一线条的边框*/
+  empty-cells: show; /*单元格无内容依旧绘制边框*/
+}
+table th,
+table td {
+  height: 40px; /*统一每一行的默认高度*/
+  border: 1px solid #dedede; /*内部边框样式*/
+  padding: 0 10px; /*内边距*/
+}
+table th {
+  font-weight: bold; /*加粗*/
+  text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
+  background: rgb(245, 242, 240); /*背景色*/
+}
+table tbody tr:nth-child(2n) {
+  background: rgba(158,188,226,0.12);
+}
+table tr:hover {
+  background: #efefef;
+}
+
+

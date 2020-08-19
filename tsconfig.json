@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ES5",
+    "module": "ESNext",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/localCom/*": ["./src/localCom/*"]
+    },
+    "isolatedModules": false,
+    "declaration": true,
+    "declarationDir": "build/lib",
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
