@@ -4,6 +4,6 @@ import App from './App';
 import './global.less';
 
 render(
-  App(),
+  <App />,
   document.getElementById('root'),
 );

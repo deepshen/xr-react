@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Upload } from '@/components/index';
-import home from './home.md';
-import MarkDown from '../../localCom/MarkDown';
+import MarkDown from '@/localCom/MarkDown';
+import ExtandMark from '@/localCom/ExtandMark';
+import home from './index.md';
+import base from './base.md';
 
 export default () => {
   const [url, setUrl] = useState('');
@@ -10,10 +12,11 @@ export default () => {
   };
   return (
     <div>
-      <div>
-        <img src={url} alt="" />
+      <div style={{ display: 'flex' }}>
+        <img style={{ width: 80, height: 80, marginRight: 20 }} src={url} alt="" />
         <Upload onSuccess={handleSuccess} />
       </div>
+      <ExtandMark value={base} />
       <MarkDown
         value={home}
       />

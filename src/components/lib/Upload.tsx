@@ -35,11 +35,11 @@ export default (props: Props) => {
   } = props;
   const upload = new COS({
     getAuth() {
-      const startTime = (new Date().valueOf() / 1000);
+      const startTime = parseInt(String(new Date().valueOf() / 1000), 10);
       return handleAuth().then((res) => ({
         TmpSecretId: res.data.tmpSecretId,
         TmpSecretKey: res.data.tmpSecretKey,
-        StartTime: startTime,
+        // StartTime: startTime,
         ExpiredTime: res.data.expiration,
         XCosSecurityToken: res.data.sessionToken,
       }));

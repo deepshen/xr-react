@@ -8,6 +8,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   env: {
+    commonjs: true,
     es6: true,
     node: true,
   },

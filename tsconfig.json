@@ -13,7 +13,9 @@
     "paths": {
       "@/components/*": ["./src/components/*"],
       "@/utils/*": ["./src/utils/*"],
-      "@/localCom/*": ["./src/localCom/*"]
+      "@/localCom/*": ["./src/localCom/*"],
+      "@/config/*": ["./src/config/*"],
+      "@/view/*": ["./src/view/*"]
     },
     "isolatedModules": false,
     "declaration": true,

@@ -78,23 +78,25 @@ module.exports = merge(mergeConfig,
         '@/components': path.resolve(__dirname, './src/components'),
         '@/utils': path.resolve(__dirname, './src/utils'),
         '@/localCom': path.resolve(__dirname, './src/localCom'),
+        '@/config': path.resolve(__dirname, './src/config'),
+        '@/view': path.resolve(__dirname, './src/view')
       },
     },
     plugins: [
       new CleanWebpackPlugin(),
     ],
     externals:{
-      react: {
-        commonjs: 'react',
-        commonjs2: 'react',
-        amd: 'react',
-        root: 'React',
-      },
-      'react-dom': {
-        commonjs: 'react-dom',
-        commonjs2: 'react-dom',
-        amd: 'react-dom',
-        root: 'ReactDOM'
-      }
+      // react: {
+      //   commonjs: 'react',
+      //   commonjs2: 'react',
+      //   amd: 'react',
+      //   root: 'React',
+      // },
+      // 'react-dom': {
+      //   commonjs: 'react-dom',
+      //   commonjs2: 'react-dom',
+      //   amd: 'react-dom',
+      //   root: 'ReactDOM'
+      // }
     }
   });

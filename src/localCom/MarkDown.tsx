@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactMarkdown from "react-markdown";
-import CodeBlock from "./CodeBlock";
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import CodeBlock from './CodeBlock';
 
 export default (props) => {
-  const {value=''} = props
+  const { value = '' } = props;
   return (
     <ReactMarkdown
       source={value}
@@ -12,5 +12,5 @@ export default (props) => {
         code: CodeBlock,
       }}
     />
-  )
-}
+  );
+};
