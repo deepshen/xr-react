@@ -2,7 +2,7 @@ module.exports = {
   "preset": "ts-jest",
   "collectCoverage": true, /*手机测试覆盖率信息*/
   "collectCoverageFrom": ["<rootDir>/src/components/**/*.{js,jsx,ts,tsx}"],// 搜集哪些文件覆盖率
-  coverageDirectory: '<rootDir>/test/coverage', // 输出覆盖信息文件的目录
+  coverageDirectory: '<rootDir>/src/test/coverage', // 输出覆盖信息文件的目录
   "moduleNameMapper": {
     // 处理webpack resolve.alias匹配
   },
