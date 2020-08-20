@@ -19,6 +19,8 @@
     "declarationDir": "build/lib",
     "emitDeclarationOnly": true
   },
-  "include": ["src/**/*","test/**/*"],
+  "include": ["src/**/*",
+    "src/test/**/*"
+  ],
   "exclude": ["node_modules"]
 }
