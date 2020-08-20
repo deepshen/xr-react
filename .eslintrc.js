@@ -27,6 +27,7 @@ module.exports = {
     }
   },
   rules: {
+    "react/jsx-props-no-spreading": 0,
     "import/no-extraneous-dependencies":0,
     "@typescript-eslint/no-var-requires":0,
     "react/prop-types":0,
