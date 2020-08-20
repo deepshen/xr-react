@@ -11,10 +11,13 @@ module.exports = {
     "<rootDir>/src/test/**/?(*.)(spec|test).ts?(x)"
   ],
   "moduleFileExtensions": [
+    // 忽略后缀
     "ts",
     "tsx",
     "js",
-    "jsx"
+    "jsx",
+    "json",
+    "node"
   ],
   "transform": {
     "^.+\\.js$": "babel-jest",

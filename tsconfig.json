@@ -4,6 +4,7 @@
     "target": "ES5",
     "module": "ESNext",
     "allowJs": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "sourceMap": true,
@@ -17,10 +18,11 @@
     "isolatedModules": false,
     "declaration": true,
     "declarationDir": "build/lib",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "moduleResolution": "Node"
   },
   "include": ["src/**/*",
     "src/test/**/*"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules","setupJest.js","*.js"]
 }

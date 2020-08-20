@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`upload compoennt 正确渲染upload 1`] = `
+<div
+  style={
+    Object {
+      "display": "inline-block",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "border": "1px solid #ececec",
+        "borderRadius": "6px",
+        "display": "flex",
+        "height": "80px",
+        "justifyContent": "center",
+        "width": "80px",
+      }
+    }
+  >
+    +
+  </div>
+  <input
+    multiple={false}
+    onChange={[Function]}
+    style={
+      Object {
+        "height": "100%",
+        "left": "0",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0",
+        "width": "100%",
+      }
+    }
+    type="file"
+  />
+</div>
+`;

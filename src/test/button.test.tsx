@@ -1,12 +1,11 @@
-import React from 'react';
+import React from 'react'
 import {Upload} from '../components/index'
-import {shallow} from 'enzyme'
+import * as renderer from 'react-test-renderer'
 
 
 describe('upload compoennt',() => {
   it('正确渲染upload', () => {
-    expect(1+1).toBe(2)
-    // const button = shallow(<Upload />);
-    // expect(button).not.toBeNull()
+    const json = renderer.create(<Upload />).toJSON();
+    expect(json).toMatchSnapshot()
   })
 })

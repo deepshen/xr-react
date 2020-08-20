@@ -10,7 +10,7 @@
     "start": "cross-env NODE_ENV=dev webpack-dev-server --compress",
     "build": "cross-env NODE_ENV=pro webpack",
     "lin-eslint": "eslint src/ --fix",
-    "test": "jest --colors --coverage"
+    "test": "jest --colors --coverage --config=jest.config.js"
   },
   "keywords": [
     "react"
@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.10",
     "antd": "^4.5.4",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
