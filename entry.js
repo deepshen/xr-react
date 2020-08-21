@@ -11,16 +11,17 @@ function getEntries() {
   };
   const dir = path.join(__dirname, './src/components/lib');
   const mainFiles = fs.readdirSync(dir);
-  (function checkFile(files) {
+  (function checkFile(files=[],prePath) {
     files.forEach((file) => {
-      const absolutePath = path.join(dir, file);
+      const absolutePath = path.join(prePath, file);
       if (isDir(absolutePath)) {
-        checkFile(absolutePath);
+        const itemFiles = fs.readdirSync(absolutePath)
+        checkFile(itemFiles,absolutePath);
       } else {
         entries[file.split('.')[0]] = path.resolve(__dirname, absolutePath);
       }
     });
-  }(mainFiles));
+  }(mainFiles,dir));
 
   return entries;
 }

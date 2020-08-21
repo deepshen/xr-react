@@ -2,6 +2,8 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const tsImportPluginFactory = require('ts-import-plugin');
+const WebpackBar = require('webpackbar')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const { merge } = require('webpack-merge');
 
@@ -19,15 +21,6 @@ module.exports = merge(mergeConfig,
   {
     module: {
       rules: [
-        // {
-        //   test: /\.(jsx|js|ts|tsx)$/,
-        //   include: [
-        //     path.resolve(__dirname, './src'),
-        //   ],
-        //   exclude: [/node_modules/],
-        //   use: ['eslint-loader'],
-        //   enforce: 'pre',
-        // },
         {
           test: /\.(ts|tsx|js|jsx)$/,
           loader: 'ts-loader',
@@ -45,30 +38,20 @@ module.exports = merge(mergeConfig,
             },
           },
           exclude: /node_modules/,
+          include: /src/,
         },
         {
-          test: /\.css$/,
-          use: [
-            'style-loader',
+          test: /\.(c|le)ss$/,
+          use:  [
+            env==='dev'? 'style-loader':MiniCssExtractPlugin.loader,
             'css-loader',
-          ],
-        },
-        {
-          test: /\.less$/,
-          use: [
-            'style-loader',
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1,
-              },
-            },
-            'less-loader',
-          ],
+            'less-loader'
+            ]
         },
         {
           test: /\.md$/,
           use: 'raw-loader',
+          exclude: /node_modules/,
         },
       ],
     },
@@ -84,19 +67,6 @@ module.exports = merge(mergeConfig,
     },
     plugins: [
       new CleanWebpackPlugin(),
+      new WebpackBar(),
     ],
-    externals:{
-      // react: {
-      //   commonjs: 'react',
-      //   commonjs2: 'react',
-      //   amd: 'react',
-      //   root: 'React',
-      // },
-      // 'react-dom': {
-      //   commonjs: 'react-dom',
-      //   commonjs2: 'react-dom',
-      //   amd: 'react-dom',
-      //   root: 'ReactDOM'
-      // }
-    }
   });
