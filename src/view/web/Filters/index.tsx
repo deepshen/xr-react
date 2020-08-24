@@ -26,6 +26,15 @@ const Fil = (props) => {
       placeholder: '年龄',
     },
     {
+      type: 'date',
+      name: 'time',
+      placeholder: '请选择时间',
+    },
+    {
+      type: 'rdate',
+      name: 'time2',
+    },
+    {
       type: 'render',
       name: 'ceshi',
       render: () => <Input placeholder="ceshi" />,
@@ -50,9 +59,11 @@ const Fil = (props) => {
       <ExtandMark
         value={base}
       />
-      <MarkDown
-        value={desc}
-      />
+      <div className="md-box">
+        <MarkDown
+          value={desc}
+        />
+      </div>
     </div>
   );
 };

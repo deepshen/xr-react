@@ -13,13 +13,23 @@ export default () => {
   return (
     <div>
       <div style={{ display: 'flex' }}>
-        <img style={{ width: 80, height: 80, marginRight: 20 }} src={url} alt="" />
+        <img
+          style={{
+            width: 80,
+            height: 80,
+            marginRight: 20,
+          }}
+          src={url}
+          alt=""
+        />
         <Upload onSuccess={handleSuccess} />
       </div>
       <ExtandMark value={base} />
-      <MarkDown
-        value={home}
-      />
+      <div className="md-box">
+        <MarkDown
+          value={home}
+        />
+      </div>
     </div>
   );
 };

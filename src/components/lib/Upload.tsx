@@ -105,7 +105,12 @@ export default (props: Props) => {
     }
   };
   return (
-    <div style={{ position: 'relative', overflow: 'hidden', display: 'inline-block' }}>
+    <div style={{
+      position: 'relative',
+      overflow: 'hidden',
+      display: 'inline-block',
+    }}
+    >
       {
         props.children ? props.children : (
           <div style={

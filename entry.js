@@ -18,7 +18,9 @@ function getEntries() {
         const itemFiles = fs.readdirSync(absolutePath)
         checkFile(itemFiles,absolutePath);
       } else {
-        entries[file.split('.')[0]] = path.resolve(__dirname, absolutePath);
+        if(/\.(ts|tsx|js|jsx)$/.test(file)){
+          entries[file.split('.')[0]] = path.resolve(__dirname, absolutePath);
+        }
       }
     });
   }(mainFiles,dir));

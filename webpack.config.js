@@ -46,7 +46,7 @@ module.exports = merge(mergeConfig,
             env==='dev'? 'style-loader':MiniCssExtractPlugin.loader,
             'css-loader',
             'less-loader'
-            ]
+            ],
         },
         {
           test: /\.md$/,

@@ -1,9 +1,11 @@
 import React, { useEffect, useState, cloneElement } from 'react';
 import {
-  Row, Col, Input, Button, Select,
+  Row, Col, Input, Button, Select, DatePicker,
 } from 'antd';
+import './filter.less';
 
 const { Option } = Select;
+const { RangePicker } = DatePicker;
 
 interface FilterItem{
   name: string;
@@ -24,7 +26,12 @@ export default (props: Props) => {
   } = props;
   const [reset, setReset] = useState(false);
   const handleChange = (e: any, name: string): void => {
-    const val = e?.target?.value || e;
+    let val: any;
+    if (e?.target?.nodeName === 'INPUT') {
+      val = e?.target?.value || '';
+    } else {
+      val = e?.target?.value || e;
+    }
     value[name] = val;
     onChange({ ...value }, name, val);
   };
@@ -57,6 +64,14 @@ export default (props: Props) => {
         );
         break;
       }
+      case 'date': {
+        node = <DatePicker style={{ width: '100%' }} value={value[name]} onChange={(e) => handleChange(e, name)} {...rest} />;
+        break;
+      }
+      case 'rdate': {
+        node = <RangePicker style={{ width: '100%' }} value={value[name]} onChange={(e) => handleChange(e, name)} {...rest} />;
+        break;
+      }
       case 'render': {
         if (render) {
           const component = render();
@@ -78,7 +93,7 @@ export default (props: Props) => {
       }
     }
     return (
-      <Col key={item.name || index} span={4}>
+      <Col className="com-filter-item" key={item.name || index} span={type !== 'rdate' ? 4 : 8}>
         {node}
       </Col>
     );
@@ -97,12 +112,12 @@ export default (props: Props) => {
     setReset(true);
   };
   return (
-    <div>
+    <div className="com-box">
       <Row gutter={16}>
         {
           renderItem()
         }
-        <Col>
+        <Col className="com-btn-box">
           <Button onClick={handleReset}>重置</Button>
           <Button type="primary" onClick={handleSearch}>搜索</Button>
         </Col>

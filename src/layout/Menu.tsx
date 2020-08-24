@@ -12,15 +12,33 @@ interface ItemD {
 const { Item, SubMenu } = Menu;
 const Side = (props) => {
   const [select, setSelect] = useState('');
+  const [open, setOpen] = useState('');
+  const initOpenKeys = (pathname) => {
+    let result = '';
+    function loop(files = []) {
+      for (let i = 0, len = files.length; i < len; i += 1) {
+        if (files[i].path === pathname) {
+          return;
+        } if (files[i].children) {
+          result = files[i].path;
+          loop(files[i].children);
+        }
+      }
+    }
+    loop(menu);
+    return [result];
+  };
   useEffect(() => {
     const { pathname } = props.location;
     setSelect(pathname);
-  });
+    setOpen(initOpenKeys(pathname));
+  }, []);
   return (
     <Menu
       key={select}
       mode="inline"
       defaultSelectedKeys={select}
+      defaultOpenKeys={open}
     >
       {
         menu.map((item: ItemD) => {

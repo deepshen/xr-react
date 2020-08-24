@@ -34,15 +34,15 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
     new LodashModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(), 查看各模块依赖大小
   ],
   optimization: {
     splitChunks: {
-      chunks: "all",
       cacheGroups: {
         vendor:{
+          chunks: "all",
           test: /[\\/]node_modules[\\/]/,
-          priority: 2
+          priority: 2,
         }
       },
     },
