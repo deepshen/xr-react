@@ -2,23 +2,11 @@ import React, { useEffect, useState, cloneElement } from 'react';
 import {
   Row, Col, Input, Button, Select, DatePicker,
 } from 'antd';
-import './filter.less';
+import './style/filter.less'
+import {FilterItem,Props} from './interface'
 
 const { Option } = Select;
 const { RangePicker } = DatePicker;
-
-interface FilterItem{
-  name: string;
-  type: string;
-  options?: object[];
-  render?: Function;
-}
-interface Props {
-  filters: FilterItem[];
-  value: object;
-  onChange: Function;
-  onSearch: Function;
-}
 
 export default (props: Props) => {
   const {

@@ -1,5 +1,5 @@
 import Upload from './lib/Upload';
 import Filters from './lib/Filters';
-
 export { Upload, Filters };
-export default '';
+declare const _default: "";
+export default _default;

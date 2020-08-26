@@ -1,6 +1,6 @@
 import React from 'react';
 import COS from 'xr-cos-web';
-import { handleUpload, handleAuth } from '../../utils/index';
+import { handleUpload, handleAuth } from '../utils/index';
 
 const FN = () => {};
 interface Props {
@@ -39,7 +39,7 @@ export default (props: Props) => {
       return handleAuth().then((res) => ({
         TmpSecretId: res.data.tmpSecretId,
         TmpSecretKey: res.data.tmpSecretKey,
-        // StartTime: startTime,
+        StartTime: startTime,
         ExpiredTime: res.data.expiration,
         XCosSecurityToken: res.data.sessionToken,
       }));
@@ -91,7 +91,7 @@ export default (props: Props) => {
       const reader = new FileReader();
       reader.readAsArrayBuffer(item);
       let blob;
-      reader.onload = function (r) {
+      reader.onload = function (r:any) {
         if (typeof r.target.result === 'object') {
           blob = new Blob([r.target.result]);
         } else {
