@@ -2,7 +2,6 @@ import React, { useEffect, useState, cloneElement } from 'react';
 import {
   Row, Col, Input, Button, Select, DatePicker,
 } from 'antd';
-import './style/filter.less'
 import {FilterItem,Props} from './interface'
 
 const { Option } = Select;

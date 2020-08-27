@@ -9,7 +9,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 import React, { useEffect, useState, cloneElement } from 'react';
 import { Row, Col, Input, Button, Select, DatePicker } from 'antd';
-import './style/filter.less';
 var Option = Select.Option;
 var RangePicker = DatePicker.RangePicker;
 export default (function (props) {
