@@ -16,9 +16,9 @@ module.exports = {
   output: {
     filename: chunkData => {
       if(chunkData.chunk.name === 'indexEntry'){
-        return 'index.js'
+        return 'index.jsx'
       }
-      return chunkData.chunk.name === 'index'?'lib/[name].js':'lib/components/[name]/index.js'
+      return chunkData.chunk.name === 'index'?'lib/[name].js':'lib/components/[name]/index.jsx'
     },
     path: path.resolve(__dirname,'..','docs'),
     libraryTarget: "umd",

@@ -12,8 +12,8 @@ interface ItemD {
 const { Item, SubMenu } = Menu;
 const Side = (props) => {
   const [select, setSelect] = useState('');
-  const [open, setOpen] = useState('');
-  const initOpenKeys = (pathname) => {
+  const [open, setOpen] = useState([]);
+  const initOpenKeys = (pathname: string): string[] => {
     let result = '';
     function loop(files = []) {
       for (let i = 0, len = files.length; i < len; i += 1) {
@@ -29,7 +29,7 @@ const Side = (props) => {
     return [result];
   };
   useEffect(() => {
-    const { pathname } = props.location;
+    const { pathname = '' } = props.location;
     setSelect(pathname);
     setOpen(initOpenKeys(pathname));
   }, []);

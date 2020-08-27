@@ -3,6 +3,7 @@ const babel = require('gulp-babel')
 const less = require('gulp-less')
 const cssnano = require('gulp-cssnano')
 const autoprefixer = require('gulp-autoprefixer')
+const through2 = require('through2')
 
 const path = {
   dest: {
@@ -49,8 +50,36 @@ function compile2css() {
     .pipe(gulp.dest(path.dest.esm))
 }
 
+function cssInjection(content) {
+  return content
+    .replace(/\/style\/?'/g, '/style/css')
+    .replace(/\/style\/?"/g, 'style.css')
+    .replace(/\.less/g,'.css')
+}
+function compileScripts() {
+  return gulp
+    .src(path.scripts)
+    .pipe(babel())
+    .pipe(
+      through2.obj(function (file,encodeing,next) {
+        this.push(file.clone())
+        if(file.path.match(/(\/|\\)style(\/|\\)index.jsx/)){
+          const content = file.contents.toString(encodeing)
+          file.contents = Buffer.from(cssInjection(content))
+          file.path = file.path.replace(/index\.js/,'css.js')
+          this.push(file)
+          next()
+        }else {
+          next()
+        }
+      })
+    )
+    .pipe(gulp.dest(path.dest.lib))
+    .pipe(gulp.dest(path.dest.esm))
+}
+
 const build = gulp.series(compileJs,compileEsm)
-const buildRun = gulp.parallel(build,compileStyle,compile2css)
+const buildRun = gulp.parallel(build,compileStyle,compile2css, compileScripts)
 
 exports.build = buildRun
 
