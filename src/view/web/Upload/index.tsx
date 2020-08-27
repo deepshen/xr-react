@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import { Upload } from '@/components/index';
 import MarkDown from '@/localCom/MarkDown';
 import ExtandMark from '@/localCom/ExtandMark';
-import { Upload } from '../../../../lib/components/index';
+import { Upload } from '../../../../lib/index';
 import home from './index.md';
 import base from './base.md';
 

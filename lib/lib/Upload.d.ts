@@ -1,4 +1,3 @@
-/// <reference types="react" />
 interface Props {
     isPrivate?: boolean;
     multiple?: boolean;
@@ -14,5 +13,5 @@ interface Props {
     onChange?: Function;
     children?: object;
 }
-declare const _default: (props: Props) => JSX.Element;
-export default _default;
+declare const Upload: (props: Props) => JSX.Element;
+export default Upload;

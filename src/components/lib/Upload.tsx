@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import COS from 'xr-cos-web';
 import { handleUpload, handleAuth } from '../utils/index';
 
@@ -18,7 +18,7 @@ interface Props {
   onChange?: Function;
   children?: object;
 }
-export default (props: Props) => {
+const Upload =  (props: Props) => {
   const {
     multiple = false,
     authSuccess = FN,
@@ -145,3 +145,5 @@ export default (props: Props) => {
     </div>
   );
 };
+
+export default Upload

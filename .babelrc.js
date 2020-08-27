@@ -10,6 +10,24 @@ module.exports = {
     '@babel/preset-typescript'
   ],
   plugins: [
-    'transform-es2015-modules-commonjs'
-  ]
+    // 'transform-es2015-modules-commonjs'
+  ],
+  env: {
+    esm:{
+      presets:[
+        ['@babel/preset-env',
+          {
+            modules:false
+          }
+        ]
+      ],
+      plugins:[
+        ['@babel/plugin-transform-runtime',
+          {
+            useESModules: true
+          }
+        ]
+      ]
+    }
+  },
 }

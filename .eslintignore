@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 docs/
 config/
 entry.js
@@ -8,3 +8,4 @@ test/
 jest.config.js
 lib/
 gulpfile.js
+esm/
