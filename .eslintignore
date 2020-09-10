@@ -9,3 +9,4 @@ jest.config.js
 lib/
 gulpfile.js
 esm/
+global.d.ts

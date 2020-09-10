@@ -43,6 +43,7 @@ module.exports = {
     "array-bracket-spacing": [2, 'never'] // 指定数组的元素之间要以空格隔开(,后面)
   },
   globals: {
-    fetch: true
+    fetch: true,
+    ENV: true
   },
 }

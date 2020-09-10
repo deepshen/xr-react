@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const tsImportPluginFactory = require('ts-import-plugin');
 const WebpackBar = require('webpackbar')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 
 const { merge } = require('webpack-merge');
 
@@ -68,5 +69,8 @@ module.exports = merge(mergeConfig,
     plugins: [
       new CleanWebpackPlugin(),
       new WebpackBar(),
+      new webpack.DefinePlugin({
+        ENV:JSON.stringify(env)
+      })
     ],
   });

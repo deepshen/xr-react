@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-// import { Upload } from '@/components/index';
+import { Upload } from '@/components/index';
+import '@/components/lib/filters/style/filter.less';
 import MarkDown from '@/localCom/MarkDown';
 import ExtandMark from '@/localCom/ExtandMark';
-import { Upload } from '../../../../lib/index';
 import home from './index.md';
 import base from './base.md';
 

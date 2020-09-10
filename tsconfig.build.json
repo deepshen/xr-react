@@ -17,6 +17,6 @@
     "allowJs": true,
     "emitDeclarationOnly": true
   },
-  "include": ["./src/components","./src/utils", "global.d.ts"],
+  "include": ["./src/components", "global.d.ts"],
   "exclude": ["node_modules","lib","esm"]
 }

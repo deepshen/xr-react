@@ -21,7 +21,7 @@ const routes = [
     name: 'web端',
     children:[
       {
-        path: '/filters',
+        path: '/filters/123',
         name: '通用表格筛选',
         component: Filters,
       }
