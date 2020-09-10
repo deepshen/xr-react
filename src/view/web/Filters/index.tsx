@@ -3,6 +3,7 @@ import { Filters } from '@/components/index';
 import { Input } from 'antd';
 import MarkDown from '@/localCom/MarkDown';
 import ExtandMark from '@/localCom/ExtandMark';
+import '@/components/lib/filters/style/filter.less';
 import desc from './index.md';
 import base from './base.md';
 

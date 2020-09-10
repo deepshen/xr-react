@@ -1,23 +1,10 @@
 import React from 'react'
 import COS from 'xr-cos-web';
-import { handleUpload, handleAuth } from '../utils/index';
+import { handleUpload, handleAuth } from '../../utils/index';
+import {Props} from './interface'
 
 const FN = () => {};
-interface Props {
-  isPrivate?: boolean;
-  multiple?: boolean;
-  authSuccess?: Function;
-  authFailed?: Function;
-  beforeUpload?: Function;
-  uploadProgress?: Function;
-  uploadFileSuccess?: Function;
-  uploadFileFailed?: Function;
-  uploadError?: Function;
-  uploadFinish?: Function;
-  onSuccess?: Function;
-  onChange?: Function;
-  children?: object;
-}
+
 const Upload =  (props: Props) => {
   const {
     multiple = false,

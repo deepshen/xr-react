@@ -3,11 +3,17 @@ import {
   Route, BrowserRouter as Router, Switch,
 } from 'react-router-dom';
 import routes from '@/config/route';
-import Home from '@/view/Home/index';
-import BasicLayout from './layout/BasicLayout';
 
 const routeFn = (rt) => rt.map((item) => {
-  if (item.children) {
+  if (item.layout) {
+    const Layout = item.layout;
+    return (
+      <Layout key={item.path}>
+        {item.children ? routeFn(item.children)
+          : <Route exact key={item.path} path={item.path} component={item.component} />}
+      </Layout>
+    );
+  } if (item.children) {
     return routeFn(item.children);
   }
   return <Route exact key={item.path} path={item.path} component={item.component} />;
@@ -15,12 +21,9 @@ const routeFn = (rt) => rt.map((item) => {
 export default () => (
   <Router>
     <Switch>
-      <Route exact path="/ceshi" component={Home} />
-      <BasicLayout>
-        {
-            routeFn(routes)
-          }
-      </BasicLayout>
+      {
+        routeFn(routes)
+      }
     </Switch>
   </Router>
 );

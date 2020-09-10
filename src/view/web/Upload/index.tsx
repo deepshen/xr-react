@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Upload } from '@/components/index';
-import '@/components/lib/filters/style/filter.less';
 import MarkDown from '@/localCom/MarkDown';
 import ExtandMark from '@/localCom/ExtandMark';
 import home from './index.md';

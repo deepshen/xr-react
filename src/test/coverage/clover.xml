@@ -4,7 +4,7 @@
     <metrics statements="111" coveredstatements="43" conditionals="86" coveredconditionals="14" methods="28" coveredmethods="2" elements="225" coveredelements="59" complexity="0" loc="111" ncloc="111" packages="2" files="3" classes="3"/>
     <package name="lib">
       <metrics statements="57" coveredstatements="35" conditionals="32" coveredconditionals="14" methods="15" coveredmethods="2"/>
-      <file name="Upload.tsx" path="/Users/liuwei/Desktop/xr-react/src/components/lib/Upload.tsx">
+      <file name="upload.tsx" path="/Users/liuwei/Desktop/xr-react/src/components/lib/upload.tsx">
         <metrics statements="57" coveredstatements="35" conditionals="32" coveredconditionals="14" methods="15" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

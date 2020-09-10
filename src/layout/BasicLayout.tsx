@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
+// eslint-disable-next-line import/no-cycle
 import Menu from './Menu';
 
 const { Header, Content, Sider } = Layout;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Menu } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
-import menu from '@/config/route';
+// eslint-disable-next-line import/no-cycle
+import routes from '@/config/route';// 循环依赖了
 
 interface ItemD {
   children?: ({path: string;name: string})[];
@@ -25,7 +26,7 @@ const Side = (props) => {
         }
       }
     }
-    loop(menu);
+    loop(routes);
     return [result];
   };
   useEffect(() => {
@@ -41,7 +42,7 @@ const Side = (props) => {
       defaultOpenKeys={open}
     >
       {
-        menu.map((item: ItemD) => {
+        routes.map((item: ItemD) => {
           if (item.hide) {
             return null;
           }
