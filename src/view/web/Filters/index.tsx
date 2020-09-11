@@ -23,6 +23,10 @@ const Fil = (props) => {
           value: '1',
           label: 'ceshi',
         },
+        {
+          value: '2',
+          label: 'ceshi2',
+        },
       ],
       placeholder: '年龄',
     },

@@ -27,6 +27,7 @@ module.exports = {
     }
   },
   rules: {
+    "react/jsx-filename-extension": 0,
     "@typescript-eslint/camelcase": 0,
     "react/jsx-props-no-spreading": 0,
     "import/no-extraneous-dependencies":0,

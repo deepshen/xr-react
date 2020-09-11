@@ -9,7 +9,7 @@ module.exports = {
   },
   "setupFiles": ["./setupJest.js"], // 测试前可运行的脚本，注册enzyme
   "testMatch": [ // 匹配测试进行的文件
-    "<rootDir>/src/test/**/?(*.)(spec|test).ts?(x)"
+    "<rootDir>/src/test/**/?(*.)(spec|test).{j,t}s?(x)"
   ],
   "moduleFileExtensions": [
     // 忽略后缀
@@ -21,7 +21,7 @@ module.exports = {
     "node"
   ],
   "transform": {
-    "^.+\\.js$": "babel-jest",
+    "^.+\\.jsx?$": "babel-jest",
     "^.+\\.tsx?$": "ts-jest"
   },
   "moduleDirectories": [

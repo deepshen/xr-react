@@ -40,15 +40,14 @@ export default (props: Props) => {
         break;
       }
       case 'select': {
-        node = (
-          <Select allowClear value={value[name]} onChange={(e) => handleChange(e, name)} style={{ width: '100%' }} {...rest}>
+        node = <Select allowClear value={value[name]} onChange={(e) => handleChange(e, name)} style={{ width: '100%' }} {...rest}>
             {
                 options.map((i: any) => (
                   <Option value={i.value} key={i.value}>{i.label}</Option>
                 ))
               }
           </Select>
-        );
+        ;
         break;
       }
       case 'date': {
