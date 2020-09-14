@@ -1,7 +1,7 @@
 module.exports = {
   "preset": "ts-jest",
   "collectCoverage": true, /*手机测试覆盖率信息*/
-  "collectCoverageFrom": ["<rootDir>/src/components/lib/**/*.{js,jsx,ts,tsx}"],// 搜集哪些文件覆盖率
+  "collectCoverageFrom": ["<rootDir>/src/components/**/*.{js,jsx,ts,tsx}"],// 搜集哪些文件覆盖率
   coverageDirectory: '<rootDir>/src/test/coverage', // 输出覆盖信息文件的目录
   coveragePathIgnorePatterns: ['style'], // 覆盖率忽略文件
   "moduleNameMapper": {
@@ -29,5 +29,5 @@ module.exports = {
     "node_modules",
     "src"
   ],
-  "transformIgnorePatterns": ["/node_modules/"] // 转化时忽略的文件
+  "transformIgnorePatterns": ["/node_modules/"], // 转化时忽略的文件
 }
